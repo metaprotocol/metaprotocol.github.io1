@@ -2,7 +2,7 @@ const ipfs = window.IpfsHttpClient({ host: 'ipfs.infura.io', port: 5001 })
 
 document.querySelector('#fileUpload').addEventListener('change', function() {
 
-  document.getElementById("ipfs_hash").innerHTML = "<b>Uploading...Please wait</b>"
+  document.getElementById("ipfs_hash").innerHTML = "<b>установка соединения</b>"
   
   var reader = new FileReader();
   reader.onload = function() {
@@ -14,7 +14,7 @@ document.querySelector('#fileUpload').addEventListener('change', function() {
     //console.log(result)
     ipfs.add(binaryString, (err, result) => {
       console.log(result)
-      document.getElementById("ipfs_hash").innerHTML = "<b>IPFS Hash of uploded file: </b>"+result[0].hash 
+      document.getElementById("ipfs_hash").innerHTML = "<b>Ключ: </b>"+result[0].hash 
     })
   }
   reader.readAsArrayBuffer(this.files[0]);
