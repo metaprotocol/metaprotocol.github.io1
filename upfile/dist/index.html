@@ -3,14 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>file</title>
-  
+  <style>
+    input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+  </style>
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <h3></h3>
 
-<input type="file" id="upload">
+<!--<input type="file" id="upload">-->
+  
+  <label for="upload" class="custom-file-upload">
+    <i class="fa fa-cloud-upload"></i> Custom Upload
+</label>
+<input id="upload" type="file"/>
 
 <div id="link"></div> <!-- markup created after upload -->
 <!-- partial -->
